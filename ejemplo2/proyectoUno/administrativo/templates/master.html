@@ -16,6 +16,7 @@
     </title>
   </head>
   <body>
+    {% load socialaccount %}
     <!-- paso 5-->
   <header>
     <img src="{% static 'images/logo.png' %}" height="10%" width="10%" alt="My image">
@@ -43,6 +44,7 @@
           <li><a href="{% url 'logout_view' %}">salir</a></li>
         {% else %}
           <li>[<a href="{% url 'login' %}">ingresar</a>]</li>
+          <li>[<a href="{% provider_login_url 'github' %}">ingresar con GitHub</a>]</li>
         {% endif %}
       </ul>
     </nav>

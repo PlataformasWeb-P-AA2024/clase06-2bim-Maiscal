@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-# from django.conf.urls import include, url
+from django.urls import include, path, re_path
 from django.contrib.auth import views as auth_views
 
 from rest_framework import routers
@@ -31,7 +31,7 @@ router.register(r'numerosts', views.NumeroTelefonicoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('administrativo.urls')),
-    # path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
     # http://127.0.0.1:8000/api/users
     # http://127.0.0.1:8000/api/groups
     # http://127.0.0.1:8000/api/estudiantes
